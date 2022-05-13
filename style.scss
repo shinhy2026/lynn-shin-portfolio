@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+
+}
+
+h2 {
+  font-family: 'Hepta Slab', sans-serif;
+}
+
+h3 {
+  font-family: 'Hepta Slab', sans-serif;
+  font-weight: 300;
+}
+
+section {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding-right: 20%;
+    padding-top: 70px;
+
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.7em;
+  font-family: 'Hepta Slab', sans-serif;
+}
+
+.links span {
+  margin: 60px;
+}
+
+.links {
+  margin-top: 55%;
+}
+
+.one {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  padding-right: 20%;
+  background-color: #E5E5E5;
+}
+
+.margin {
+    margin-left: 264px;
+}
+
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 128px;
+    width: 8px;
+    background: black;
+    height: 60%;
+    z-index: 100;
+    transition: height 0.1s ease;
+}
+
+.three {
+  background: #ececec;
+}
+
+.four {
+  background: #e1e1e1;
+}
+
+.five {
+  height: 100vh;
+}
+
+
+.name {
+display: flex;
+justify-content: flex-end;
+align-items: flex-end;
+    color: black;
+  font-family: 'Hepta Slab', sans-serif;
+  font-size: 4em;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.description {
+    margin: 20px 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.basic-info {
+    margin-top: 100px;
+    background-color: #E5E5E5;
+    padding: 20px;
+    margin-bottom: 100px;
+    
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.about-me {
+    background-color: #E5E5E5;
+    padding: 20px;
+}
+
+.education, .eca {
+    background-color: white;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.education {
+margin-right: 5%;
+}
+
+.education-description, .eca-description {
+  padding-top: 20px;
+}
+
+.box-model {
+  display: flex;
+  flex-wrap: row;
+  justify-content: space-between;
+}
+
+.projects, .skills {
+    padding: 20px;
+    background-color: black;
+    margin: 20px 0px;
+}
+
+.skills {
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+
+.card {
+  margin: 20px;
+}
+
+#image-exchange {
+    position: relative;
+    &::before,
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        border: 2px solid black;
+        transition: all .25s ease-out;
+  }
+
+  &::before {
+    background-color: black;
+    top: -15px;
+    left: -15px;
+  }
+  &::after {
+    bottom: -15px;
+    right: -15px;
+  }
+  
+  &:hover {
+    &::before {
+      top: 15px;
+      left: 15px;
+    }
+    &::after {
+      bottom: 15px;
+      right: 15px;
+    }
+  }
+}
+
+.contact-me-hover {
+  &::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  
+  &:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  &::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: #E5E5E5;
+    z-index: -1;
+    transition: transform .3s ease;
+  }
+  
+  & {
+    position: relative;
+  }
+}
+
+#box-pop {
+	display: flex;
+	text-decoration: none;
+	color: inherit;
+	max-width: 400px;
+	position: relative;
+	padding: 2rem;
+	box-shadow: inset 0 0 0 3px #000, inset -4px -4px 0 6px #CCC;
+	background-color: #FFF;
+	cursor: pointer; 
+	&:before {
+		position: absolute; 
+		left: 0;
+		bottom: 0;
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: #000;
+		transform-origin: 0 bottom 0;
+		transform: scaleY(0);
+		transition: .4s ease-out;
+	}
+	
+	&:hover {
+		.education-description, .eca-description, .eca-title, .education-title {
+			color: #FFF;
+		}
+		&:before {
+			transform: scaleY(1);
+		}
+	}
+}
+
+.education-description, .eca-description, .eca-title, .education-title {
+	position: relative;
+	transition: .4s ease-out;
+}
+
+.card{
+  position:relative;
+  
+  padding:42px 32px;
+  
+clip-path: inset(0 0 77% 76% round 4%);
+  transition: all ease-in-out .3s;
+  background-color:#ffffff;
+  color: #000;
+
+  &__text{
+    position:absolute;
+    
+    top: 22px;
+    right:27px;
+    
+    font-size:1.4em;
+    font-weight: bold;
+    color: black;
+    transition:ease-out .3s;
+  }
+  &__title{
+    margin:0;
+    position: relative;
+    font-size: 3em;
+  }
+  &__description{
+    margin:0;
+    
+    font-size: 1.1em;
+    line-height:1.6;
+  }
+  &__credits{
+    margin:0;
+    padding: 4px 0;
+    
+    font-size: 1.1em;
+  }
+  &__reference{
+    display:inline-block;
+    
+    border-bottom: 1px solid transparent;
+    color:#0099ff;
+    text-decoration:none;
+    transition: ease-in .3s;
+    &:hover{
+       border-bottom-color: #0099ff;
+    }
+  }
+  
+  &:hover, &:focus{
+    clip-path: inset(0 0 0% 0% round 4%);
+    border-radius:20px;
+    box-shadow: 0px 3px 9px rgba(0,0,0,0.12),
+                0px 3px 18px rgba(0,0,0,0.08);
+    background:#ffffff;
+    
+    outline:none;
+    .card__first-show{
+      opacity: 0;
+    }
+  }
+  &:focus{
+    box-shadow: 0px 3px 9px rgba(0,0,0,0.12), 
+                0px 3px 18px rgba(0,0,0,0.08), 
+                0px 0px 0px 4px rgba(0,0,0,0.2);
+  }
+}
+
+.skillnames {
+  list-style: none;
+  margin: 20px;
+  padding: 0;
+  display: flex;
+}
+.skillnames li {
+  flex: 1;
+}
+.skillnames li div {
+  text-decoration: none;
+  color: inherit;
+  padding-top: 1rem;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  font-size: 40px;
+}
+.skillnames li div span {
+  display: block;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  font-size: 22px;
+  margin-top: 1rem;
+}
+
+@media (hover: hover) {
+  .skillnames li div span {
+    transform: translateY(100px);
+    transition: 0.2s;
+  }
+  .skillnames:hover span {
+    transform: translateY(0);
+  }
+  .skillnames li:nth-child(1) span {
+    transition-delay: 0.0s;
+  }
+  .skillnames li:nth-child(2) span {
+    transition-delay: 0.05s;
+  }
+  .skillnames li:nth-child(3) span {
+    transition-delay: 0.1s;
+  }
+  .skillnames li:nth-child(4) span {
+    transition-delay: 0.15s;
+  }
+  .skillnames li:nth-child(5) span {
+    transition-delay: 0.2s;
+  }
+  .skillnames li:nth-child(6) span {
+    transition-delay: 0.25s;
+  }
+}
+
+.skillnames li:nth-child(1) {
+  background: white;
+}
+.skillnames li:nth-child(2) {
+  background: #E5E5E5;
+}
+.skillnames li:nth-child(3) {
+  background: white;
+}
+.skillnames li:nth-child(4) {
+  background: #E5E5E5;
+}
+.skillnames li:nth-child(5) {
+  background: white;
+}
+.skillnames li:nth-child(6)  {
+  background: #E5E5E5;
+}
